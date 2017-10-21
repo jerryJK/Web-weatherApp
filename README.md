@@ -1,4 +1,4 @@
 # WeatherApp
 
 Weather responsive website </br>
-HTML/CSS/SASS/JavaScript/JQuery
+HTML/CSS/SASS/JavaScript/jQuery
