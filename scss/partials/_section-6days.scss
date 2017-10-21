@@ -1,0 +1,41 @@
+.section-6days {
+    display: none;
+    margin-top: 70px;
+    position: relative;
+    z-index: 50;
+
+    .container .row {
+        width: 100%;
+
+        .weather__row {
+            padding: 0 10px 10px;
+
+            .row {
+                background-color: rgba(237, 240, 237,0.2);
+                color: white;
+                padding: 3px;
+            }
+        }
+    }
+}
+
+.row__icon {
+    position: relative;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 12px;
+}
+
+@media (min-width: $tablet-min-width) {
+    .section-6days {
+        display: none;
+    }
+}

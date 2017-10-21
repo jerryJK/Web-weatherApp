@@ -1,0 +1,127 @@
+.header-main {
+    background-color: $background-menu;
+    height: 60px;
+    font-family: $main-font-family;
+
+    .container {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+//LOGO
+.header-main__logo {
+    height: 60px;
+    width: 150px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+//NAVIGATION
+.header-main__menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 2;
+
+    .menu__item {
+        font-size: 20px;
+        font-weight: 500;
+        margin-right: 20px;
+        display: none;
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                position: relative;
+                top: -1px;
+                left: -1px;
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet-min-width) {
+    .header-main__logo {
+        width: 200px;
+    }
+
+    .header-main__menu {
+        .menu__item {
+            display: block;
+        }
+
+        .menu__hamburger,
+        .menu__search {
+            display: none;
+        }
+    }
+}
+//MENU search
+.menu__search {
+    .search-icon {
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/search.png");
+        background-position: center;
+        background-size: cover;
+    }
+}
+//HAMBURGER BUTTON
+.menu__hamburger {
+    margin-right: 20px;
+
+    .button {
+        padding: 20px;
+        width: 25px;
+    }
+
+    .button > .hamburger {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        position: relative;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .button > .hamburger::before {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        top: -8px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .button > .hamburger::after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        top: 8px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .button.active > .hamburger::before {
+        transition: 0.3s ease-in-out;
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .button.active > .hamburger::after {
+        transition: 0.3s ease-in-out;
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .button.active > .hamburger {
+        transition: background-color 0.3s ease-in-out;
+        background-color: transparent;
+    }
+}

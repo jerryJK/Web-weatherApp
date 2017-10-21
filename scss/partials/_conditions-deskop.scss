@@ -1,0 +1,46 @@
+.conditions-deskop {
+    display: none;
+    opacity: 0;
+    color: white;
+}
+
+
+@media (min-width: $deskop-min-width) {
+  .conditions-deskop {
+        display: block;
+        opacity: 1;
+
+      .items {
+
+          position: absolute;
+          top: 30px;
+          left: 30px;
+
+          p {
+              font-size: 16px;
+              padding: 15px;
+              padding-left: 0;
+              color: rgb(237, 240, 237);
+            }
+
+          p:first-child {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+
+          p:not(:first-child) {
+
+              &::after {
+                content: "";
+                height: 1px;
+                width: 100%;
+                margin: 0 auto;
+                background-color: rgba(237, 240, 237,0.8);
+                display: block;
+                margin-top: 5px;
+              }
+
+          }
+      }
+  }
+}

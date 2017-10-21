@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Loading overlay-->
+    <div id="overlay">
+        <div class="loading">
+            <img src="./images/sun.png" alt="">
+        </div>
+    </div>
+
+    <!--Header main-->
+    <header class="header-main">
+        <div class="container">
+            <div class="header-main__logo"></div>
+            <ul class="header-main__menu">
+                <li class="menu__item"><a href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=30&lon=-20&zoom=3">Mapy</a></li>
+                <li class="menu__item"><a href="http://www.openweathermap.org">OpenWeatherMap</a></li>
+                <li class="menu__search">
+                    <div class="search-icon"></div>
+                </li>
+                <li class="menu__hamburger">
+                    <div class="button">
+                        <div class="hamburger"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!--Mobile menu-->
+    <section class="menu-mobile">
+        <div class="container">
+            <div class="row">
+                <a href="forecast.html">Mapy</a>
+                <a href="http://www.openweathermap.org">OpenWeatherMap</a>
+            </div>
+        </div>
+    </section>
+
+    <!--Search menu-->
+    <section class="menu-search">
+        <div class="container">
+            <div class="row">
+                <input class="input-city-mobile" type="text" name="" value="" placeholder="Wpisz miasto..">
+                <span class="search-button"></span>
+            </div>
+        </div>
+    </section>
+
+    <!--Tabs-->
+    <div class="tabs-menu">
+        <div class="container">
+          <div class="material-tabs">
+            <div class="tabbed-section__selector">
+                <a class=" tab tabbed-section__selector-tab-1 active" href="#">dzisiaj</a>
+                <a class=" tab tabbed-section__selector-tab-2" href="#">jutro</a>
+                <a class=" tab tabbed-section__selector-tab-3" href="#">6 dni</a>
+                <span class="tabbed-section__highlighter"></span>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--Conditions aside - deskop-->
+    <aside class="conditions-deskop">
+      <div class="container">
+        <div class="items">
+          <p class="con-dt"></p>
+          <p class="con-morn"></p>
+          <p class="con-night"></p>
+          <p class="con-clouds"></p>
+          <p class="con-wind"></p>
+          <p class="con-pressure"></p>
+          <p class="con-humidity"></p>
+        </div>
+      </div>
+    </aside>
+
+    <!--Section current weather -->
+    <section class="section-current section-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-s-3 col-m-3 col-l-3"></div>
+                <div class="col-s-6  col-m-6 col-l-6 search-city">
+                    <input class="input-city-deskop" type="text" ng-model="city" placeholder="Sprawdź pogodę w...">
+                    <span class="search-button-deskop"></span>
+                </div>
+                <div class="col-s-3 col-m-3 col-l-3"></div>
+            </div>
+            <div class="weather-card">
+                <div class="row">
+                    <div class="col-s-2 col-m-2 col-l-2"></div>
+                    <div class="col-s-8 col-m-8 col-l-8 current-city"></div>
+                    <div class="col-s-2 col-m-2 col-l-2"></div>
+                </div>
+                <div class=" col-s-12 description">
+                    <p class="con-description"></p>
+                </div>
+                <div class="row">
+                    <div class="col-s-6 col-m-6 col-l-6">
+                        <div class="current-icon"></div>
+                    </div>
+                    <div class="col-s-6 col-m-6 col-l-6 current-temperature">
+                        <p class=tempDay></p>
+                    </div>
+                </div>
+                <div class="conditions">
+                  <div class="row">
+                    <div class="col-s-4 col-m-4 conditions-left"><span class="con-morn"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-clouds"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-pressure"></span></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-s-4 col-m-4 conditions-left"><span class="con-night"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-wind"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-humidity"></span></div>
+                  </row>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section tomorrow weather - Mobile-->
+    <section class="section-tomorrow section-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-s-3 col-m-3 col-l-3"></div>
+                <div class="col-s-6  col-m-6 col-l-6 search-city">
+                    <input type="text" ng-model="city" autofocus placeholder="Sprawdź pogodę w...">
+                </div>
+                <div class="col-s-3 col-m-3 col-l-3"></div>
+            </div>
+            <div class="weather-card">
+                <div class="row">
+                    <div class="col-s-2 col-m-2 col-l-2"></div>
+                    <div class="col-s-8 col-m-8 col-l-8 current-city"></div>
+                    <div class="col-s-2 col-m-2 col-l-2"></div>
+                </div>
+                <div class=" col-s-12 description">
+                    <p class="con-description2"></p>
+                </div>
+                <div class="row">
+                    <div class="col-s-6 col-m-6 col-l-6">
+                        <div id="aa" class="current-icon2"></div>
+                    </div>
+                    <div class="col-s-6 col-m-6 col-l-6 current-temperature">
+                        <p class=tempDay2></p>
+                    </div>
+                </div>
+                <div class="conditions">
+                  <div class="row">
+                    <div class="col-s-4 col-m-4 conditions-left"><span class="con-morn2"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-clouds2"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-pressure2"></span></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-s-4 col-m-4 conditions-left"><span class="con-night2"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-wind2"></span></div>
+                    <div class="col-s-4 col-m-4"><span class="con-humidity2"></span></div>
+                  </row>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section 6days forecast - Mobile -->
+    <section class="section-6days section-tab">
+        <div class="container">
+          <div class="row">
+            <div class="col-s-12 weather__row weather__row--1">
+              <div class="row">
+                <div class="col-s-3 row__day row__day--1"></div>
+                <div class="col-s-2 row__icon icon1"></div>
+                <div class="col-s-3 row__temperatureBox row__temperatureBox--1"></div>
+                <div class="col-s-4 row__humidity row__humidity--1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-s-12 weather__row weather__row--2 row">
+              <div class="row">
+                <div class="col-s-3 row__day row__day--2"></div>
+                <div class="col-s-2 row__icon icon2"></div>
+                <div class="col-s-3 row__temperatureBox row__temperatureBox--2">20 C</div>
+                <div class="col-s-4 row__humidity row__humidity--2">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-s-12 weather__row weather__row--3 row">
+              <div class="row">
+                <div class="col-s-3 row__day row__day--3"></div>
+                <div class="col-s-2 row__icon icon3"></div>
+                <div class="col-s-3 row__temperatureBox row__temperatureBox--3">20 C</div>
+                <div class="col-s-4 row__humidity row__humidity--3">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-s-12 weather__row weather__row--4 row">
+              <div class="row">
+                <div class="col-s-3 row__day row__day--4"></div>
+                <div class="col-s-2 row__icon icon4"></div>
+                <div class="col-s-3 row__temperatureBox row__temperatureBox--4">20 C</div>
+                <div class="col-s-4 row__humidity row__humidity--4">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-s-12 weather__row weather__row--5 row">
+              <div class="row">
+                <div class="col-s-3 row__day row__day--5"></div>
+                <div class="col-s-2 row__icon icon5"></div>
+                <div class="col-s-3 row__temperatureBox row__temperatureBox--5">20 C</div>
+                <div class="col-s-4 row__humidity row__humidity--5">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-s-12 weather__row weather__row--6 row">
+              <div class="row">
+                <div class="col-s-3 row__day row__day--6"></div>
+                <div class="col-s-2 row__icon icon6"></div>
+                <div class="col-s-3 row__temperatureBox row__temperatureBox--6">20 C</div>
+                <div class="col-s-4 row__humidity row__humidity--6">50%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+    <!--Section forecast - deskop-->
+    <section class="section-forecast">
+        <div class="container">
+            <div class="row">
+                <div class="col-s-2 col-m-3 col-l-2 forecast__box forecast__box1 forecast__box--active">
+                    <div class="box__icon icon1"></div>
+                    <p class="box__day box__day--1"></p>
+                </div>
+                <div class="col-s-2 col-m-3 col-l-2 forecast__box forecast__box2">
+                    <div class="box__icon icon2"></div>
+                    <p class="box__day box__day--2"></p>
+                </div>
+                <div class="col-s-2 col-m-3 col-l-2 forecast__box forecast__box3">
+                    <div class="box__icon icon3"></div>
+                    <p class="box__day box__day--3"></p>
+                </div>
+                <div class="col-s-2 col-m-3 col-l-2 forecast__box forecast__box4 col-m-last">
+                    <div class="box__icon icon4"></div>
+                    <p class="box__day box__day--4"></p>
+                </div>
+                <div class="col-l-2 forecast__box forecast__box5 end">
+                    <div class="box__icon icon5"></div>
+                    <p class="box__day box__day--5"></p>
+                </div>
+                <div class="col-l-2 forecast__box forecast__box6 end">
+                    <div class="box__icon icon6"></div>
+                    <p class="box__day box__day--6"></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

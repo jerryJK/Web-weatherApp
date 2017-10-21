@@ -1,0 +1,52 @@
+#overlay {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 103;
+
+}
+
+.loading{
+  position: absolute;
+  top:50%;
+  left:50%;
+  font-size:40px;
+  color:orange;
+  font-family: $main-font-family;
+  @include translate(-50%, -50%);
+
+
+   img{
+    width: 50px;
+    height: 50px;
+    animation:anim 3s infinite;
+    display: inline-block;
+    //color:orange;
+    margin: 2px;
+    @include transform-origin(50% 50% -5px);
+  }
+}
+
+@keyframes anim{
+  to{
+    @include rotate(360);
+  }
+}
+
+
+@media (min-width: $tablet-min-width) {
+  .loading{
+    font-size:56px;
+    img{
+     width: 150px;
+     height: 150px;
+   }
+  }
+}

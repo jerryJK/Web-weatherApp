@@ -1,0 +1,19 @@
+body {
+	background: $background-color;
+	background-image: url("../images/background-image.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
+	font-family: $main-font-family;
+	text-shadow: 2px 2px 3px black;
+	height: 100vh;
+}
+
+.ui-page-active {
+	height: 100vh !important;
+	background-size: cover;
+}
+
+*:focus {
+	outline: 0;
+}

@@ -1,0 +1,103 @@
+.section-tomorrow {
+    margin-top: 70px;
+    display: none;
+    position: relative;
+    z-index: 99;
+    top: -30px;
+
+    .dateContainer {
+        float: right;
+        color: white;
+        margin-right: 20px;
+    }
+
+    .search-city {
+        display: none;
+    }
+
+    .current-city {
+        margin-bottom: 10px;
+        color: white;
+        font-size: 30px;
+        font-family: $main-font-family;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .current-icon2 {
+        position: relative;
+        right: 5px;
+        height: 90px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .current-temperature {
+        height: 100px;
+        color: white;
+        font-size: 60px;
+        font-family: $main-font-family;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .celcius {
+            position: relative;
+            top: -10px;
+            font-size: 45px;
+        }
+    }
+
+    .description {
+        margin-bottom: 20px;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+    }
+
+    .conditions {
+        color: rgba(237, 240, 237,0.9);
+        margin-top: 20px;
+        font-size: 14px;
+
+        [class*="col-"] {
+            text-align: left;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+
+        .conditions-left {
+            padding-left: 30px;
+        }
+
+        .humidity,
+        .pressure,
+        .temp-max,
+        .temp-min {
+            font-size: 15px;
+            display: block;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            height: 1px;
+            width: 90%;
+            margin: 0 auto;
+            background-color: rgba(237, 240, 237,0.8);
+            display: block;
+        }
+    }
+}
+
+
+@media (min-width: $tablet-min-width) {
+    .section-tomorrow {
+        display: none;
+    }
+}

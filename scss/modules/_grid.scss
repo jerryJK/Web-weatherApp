@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-page-width;
+  margin: 0 auto;
+  position: relative;
+
+
+      .row {
+          &:before,
+          &:after {
+            @extend .clearfix;
+          }
+
+          [class*="col-"]{
+            float: left;
+            width: 100% / $columns-on-grid;
+            min-height: 1px;
+            padding: $gutter;
+            margin-right:$grid-spacing;
+
+
+              &:last-of-type {
+                  margin-right: 0;
+            }
+          }
+
+          //For mobile
+
+          @media (max-width: $mobile-max-width) {
+
+          .col-s-1   { width:(100% / 12) - ($grid-spacing * 11 / 12); }
+          .col-s-2   { width:(100% / 6) - ($grid-spacing * 10 / 12); }
+          .col-s-3   { width:(100% / 4) - ($grid-spacing * 9 / 12); }
+          .col-s-4   { width:(100% / 3) - ($grid-spacing * 8 / 12); }
+          .col-s-5   { width:(100% / 2.4) - ($grid-spacing * 7 / 12); }
+          .col-s-6   { width:(100% / 2) - ($grid-spacing * 6 / 12); }
+          .col-s-7   { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
+          .col-s-8   { width:(100% / 1.5) - ($grid-spacing * 4 / 12); }
+          .col-s-9   { width:(100% / 1.333333333333333) - ($grid-spacing * 3 / 12); }
+          .col-s-10  { width:(100% / 1.2) - ($grid-spacing * 2 / 12); }
+          .col-s-11  { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
+          .col-s-12  { width:100%; }
+
+          }
+
+
+
+          //for Tablet
+          @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width){
+
+          .col-m-1   { width:(100% / 12) - ($grid-spacing * 11 / 12); }
+          .col-m-2   { width:(100% / 6) - ($grid-spacing * 10 / 12); }
+          .col-m-3   { width:(100% / 4) - ($grid-spacing * 9 / 12); }
+          .col-m-4   { width:(100% / 3) - ($grid-spacing * 8 / 12); }
+          .col-m-5   { width:(100% / 2.4) - ($grid-spacing * 7 / 12); }
+          .col-m-6   { width:(100% / 2) - ($grid-spacing * 6 / 12); }
+          .col-m-7   { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
+          .col-m-8   { width:(100% / 1.5) - ($grid-spacing * 4 / 12); }
+          .col-m-9   { width:(100% / 1.333333333333333) - ($grid-spacing * 3 / 12); }
+          .col-m-10  { width:(100% / 1.2) - ($grid-spacing * 2 / 12); }
+          .col-m-11  { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
+          .col-m-12  { width:100%; }
+
+          .col-m-last {
+              margin-right: 0;
+          }
+
+        }
+
+          //for Deskop
+          @media (min-width: $deskop-min-width) {
+
+          .col-l-1   { width:(100% / 12) - ($grid-spacing * 11 / 12); }
+          .col-l-2   { width:(100% / 6) - ($grid-spacing * 10 / 12); }
+          .col-l-3   { width:(100% / 4) - ($grid-spacing * 9 / 12); }
+          .col-l-4   { width:(100% / 3) - ($grid-spacing * 8 / 12); }
+          .col-l-5   { width:(100% / 2.4) - ($grid-spacing * 7 / 12); }
+          .col-l-6   { width:(100% / 2) - ($grid-spacing * 6 / 12); }
+          .col-l-7   { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
+          .col-l-8   { width:(100% / 1.5) - ($grid-spacing * 4 / 12); }
+          .col-l-9   { width:(100% / 1.333333333333333) - ($grid-spacing * 3 / 12); }
+          .col-l-10  { width:(100% / 1.2) - ($grid-spacing * 2 / 12); }
+          .col-l-11  { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
+          .col-l-12  { width:100%; }
+
+          .col-l-last {
+              margin-right: 0;
+          }
+
+          }
+
+      }
+}

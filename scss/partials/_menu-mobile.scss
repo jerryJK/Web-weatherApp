@@ -1,0 +1,34 @@
+.menu-mobile {
+    width: 100%;
+    height: 0;
+    z-index: 0;
+    background-color: $background-menu;
+    position: fixed;
+    transition: height 1s, background-color 3s, z-index 2s;
+
+    a {
+        color: white;
+        opacity: 0;
+        font-size: 20px;
+        text-decoration: none;
+        margin: 15px;
+        font-family: $main-font-family;
+        display: block;
+        visibility: hidden;
+        text-decoration: none;
+        transition: opacity 1s;
+        transition-delay: 0.5s;
+    }
+
+    &.mobile-active {
+        z-index: 100;
+        height: 100px;
+        background-color: $background-menu;
+        transition: height 1s, background-color 3s;
+
+        a {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

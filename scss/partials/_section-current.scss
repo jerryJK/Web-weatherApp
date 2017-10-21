@@ -1,0 +1,223 @@
+.section-current {
+    margin-top: 70px;
+    display: block;
+    position: relative;
+    z-index: 99;
+    top: -30px;
+    height: 400px;
+
+    .dateContainer {
+        float: right;
+        color: white;
+        margin-right: 20px;
+        position: relative;
+        z-index: -1;
+    }
+
+    .weather-card {
+        height: 200px;
+    }
+
+    .search-city {
+        display: none;
+    }
+
+    .current-city {
+        margin-bottom: 10px;
+        color: white;
+        font-size: 30px;
+        font-family: $main-font-family;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .current-icon {
+        position: relative;
+        right: 5px;
+        height: 90px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .current-temperature {
+        height: 100 px;
+        color: white;
+        font-size: 60px;
+        font-family: $main-font-family;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .celcius {
+            position: relative;
+            top: -15px;
+            font-size: 40px;
+        }
+    }
+
+    .description {
+        margin-bottom: 20px;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+    }
+
+    .conditions {
+        color: rgba(237, 240, 237,0.9);
+        margin-top: 20px;
+        font-size: 14px;
+
+        [class*="col-"] {
+            text-align: left;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+
+        .conditions-left {
+            padding-left: 30px;
+        }
+
+        .humidity,
+        .pressure,
+        .temp-max,
+        .temp-min {
+            font-size: 12px;
+            display: block;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            height: 1px;
+            width: 90%;
+            margin: 0 auto;
+            background-color: rgba(237, 240, 237,0.8);
+            display: block;
+        }
+    }
+}
+
+
+@media (min-width: $tablet-min-width) {
+    .section-current {
+        .search-city {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+
+            input {
+                height: 50px;
+                width: 200px;
+                font-size: 18px;
+                text-indent: 10px;
+            }
+
+            .search-button-deskop {
+                color: white;
+                border: 1px solid grey;
+                background-color: rgb(249, 192, 65);
+                min-width: 50px;
+                height: 50px;
+                background-image: url("../images/search.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .search-city {
+                flex-grow: 2;
+            }
+        }
+
+        .current-city {
+            font-size: 35px;
+        }
+
+        .current-icon {
+            background-size: contain;
+            height: 100px;
+        }
+
+        .current-temperature {
+            font-size: 60px;
+            height: 120px;
+
+            .celcius {
+                position: relative;
+                top: -22px;
+                font-size: 25px;
+            }
+        }
+
+        .conditions {
+            font-size: 15px;
+
+            [class*="col-m"] {
+                text-align: left;
+                padding: 10px 0 10px 55px;
+            }
+
+            .humidity,
+            .pressure,
+            .temp-max,
+            .temp-min {
+                font-size: 15px;
+                display: inline;
+            }
+        }
+    }
+
+    .next-button {
+        display: none;
+    }
+}
+
+
+@media (min-width: $deskop-min-width) {
+    .section-current {
+        .search-city {
+            input {
+                width: 300px;
+                font-size: 20px;
+            }
+        }
+
+        .conditions {
+            display: none;
+        }
+
+        .current-city {
+            margin-top: 0;
+            font-size: 40px;
+        }
+
+        .current-icon {
+            background-size: contain;
+            height: 150px;
+        }
+
+        .current-temperature {
+            font-size: 90px;
+            height: 160px;
+
+            .celcius {
+                position: relative;
+                top: -32px;
+                font-size: 50px;
+            }
+        }
+    }
+}

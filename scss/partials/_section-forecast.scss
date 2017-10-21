@@ -1,0 +1,60 @@
+.section-forecast {
+    display: none;
+}
+//FOR TABLETS
+@media (min-width: $tablet-min-width) {
+    .section-forecast {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: block;
+
+        .forecast__box {
+            padding: 0;
+            background: rgba(237, 240, 237,0.1);
+
+            &:hover {
+                background: rgba(237, 240, 237,0.3);
+                cursor: pointer;
+            }
+
+            .box__icon {
+                height: 50px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                margin-bottom: 8px;
+            }
+
+            .box__day {
+                color: white;
+                text-align: center;
+            }
+        }
+
+        .forecast__box--active {
+            background: rgba(237, 240, 237,0.3);
+        }
+
+        .end {
+            display: none;
+        }
+
+        .medium-last {
+            margin-right: 0;
+        }
+    }
+}
+
+
+@media (min-width: $deskop-min-width) {
+    .section-forecast {
+        .end {
+            display: block;
+        }
+
+        .forecast__box {
+            font-size: 16px;
+            height: 110px;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+
+//transform
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	   -moz-transform: $transforms;
+	    -ms-transform: $transforms;
+	        transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// Rotate X
+@mixin rotateX ($x) {
+	@include transform(rotateX($x));
+}
+
+// Rotate Y
+@mixin rotateY ($x) {
+	@include transform(rotateY($x));
+}
+
+//transform origin
+@mixin transform-origin($val) {
+  -webkit-transform-origin: $val;
+  	 -moz-transform-origin: $val;
+  		-ms-transform-origin: $val;
+  				transform-origin: $val;
+}
+
+//transform style
+@mixin transform-style($val) {
+  -webkit-transform-style: $val;
+  	 -moz-transform-style: $val;
+  		-ms-transform-style: $val;
+  				transform-style: $val;
+}
+
+//perspective
+@mixin perspective($val) {
+  -webkit-perspective: $val;
+  	 -moz-perspective: $val;
+  		-ms-perspective: $val;
+  				perspective: $val;
+}

@@ -1,0 +1,82 @@
+.material-tabs {
+    display: block;
+    float: left;
+    width: 100%;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+
+.tabbed-section__highlighter {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    height: 3px;
+    width: 80px;
+    background-color: rgb(232, 162, 6);
+    transform: translateX(0);
+    display: block;
+    left: 0;
+    transition: transform 0.23s ease;
+    transition: transform 0.23s ease,;
+}
+
+.tabbed-section__selector {
+    position: relative;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    float: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.tabbed-section__selector [class*="-tab-"] {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 80px;
+    text-align: center;
+    background: transparent;
+    text-decoration: none;
+    color: rgb(211, 212, 213);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: none;
+    box-shadow: 2px black;
+}
+
+.tabbed-section__selector [class*="-tab-"].active {
+    color: rgb(232, 162, 6);
+    text-shadow: none;
+}
+
+.tabbed-section__selector-tab-3.active ~ .tabbed-section__highlighter {
+    transform: translateX(160px);
+}
+
+.tabbed-section__selector-tab-2.active ~ .tabbed-section__highlighter {
+    transform: translateX(80px);
+}
+
+.tabbed-section__selector-tab-1.active ~ .tabbed-section__highlighter {
+    transform: translateX(0);
+}
+
+.hide-tab {
+    visibility: hidden;
+}
+
+.show-tab {
+    visibility: visible;
+    transition: visibility 1s;
+    transition-delay: 0.5s;
+}
+
+
+@media (min-width: $tablet-min-width) {
+    .tabs-menu {
+        display: none;
+    }
+}
