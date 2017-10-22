@@ -1,7 +1,7 @@
 # WeatherApp
 
-Weather responsive website.
+Weather responsive website </br>
 HTML/CSS/SASS/JavaScript/jQuery
 
-## Working Demo
+### Working Demo
 www.weatherapp.5v.pl
