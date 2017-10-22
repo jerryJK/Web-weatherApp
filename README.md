@@ -1,6 +1,6 @@
 # WeatherApp
 
-Weather responsive website </br>
+Weather responsive website (in Polish)</br>
 HTML/CSS/SASS/JavaScript/jQuery
 
 ### Working Demo
