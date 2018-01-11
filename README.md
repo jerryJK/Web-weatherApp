@@ -1,6 +1,6 @@
 # WeatherApp
 
-Weather responsive Application (in Polish)</br>
+Weather responsive App shows current and 6 days weather frecast(in Polish)</br>
 
 ### Used technologies
 HTML/CSS/SASS/JavaScript/jQuery
