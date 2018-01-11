@@ -1,5 +1,4 @@
 # WeatherApp
-
 Weather responsive App shows current and 6 days weather frecast(in Polish)</br>
 
 ### Used technologies
