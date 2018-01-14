@@ -112,27 +112,38 @@ $(function() {
 
         //curent section
 
-        $('.tempDay').html(Math.round(data[0].tempDay) + '<span class="celcius"><sup>o</sup>C</span>');
-        $('.con-description').text(data[0].description);
+        var currTempDay = $('.tempDay');
+        var currConDesc = $('.con-description')
+        var currConDt = $(".con-dt")
+        var currConMorn = $(".con-morn")
+        var currConNight = $(".con-night")
+        var currConClouds = $(".con-clouds")
+        var currConWind = $(".con-wind")
+        var currConPressure = $(".con-pressure")
+        var currConHum = $(".con-humidity")
+        var currConIcon = $(".current-icon")
 
-        //current section conditions
-        $(".con-dt").html(convertTime(data[0].dt, 'fullDate'));
-        $(".con-morn").html("Rano &nbsp;" + Math.round(data[0].tempMorn) + "&deg;" + "C");
-        $(".con-night").html("Noc &nbsp;&nbsp;" + Math.round(data[0].tempNight) + "&deg;" + "C");
-        $(".con-clouds").html("Chmury &nbsp;&nbsp;" + data[0].clouds + " %");
-        $(".con-wind").html("Wiatr &nbsp;&nbsp;" + Math.round(data[0].wind) + " m/s");
-        $(".con-pressure").html("Ciśnienie &nbsp;&nbsp;" + Math.round(data[0].pressure) + " hPa");
-        $(".con-humidity").html("Wilgotność &nbsp;&nbsp;" + data[0].humidity + " %");
-        $(".current-icon").css("background-image", data[0].imageUrl);
+        //current section conditions - insert data
+        currTempDay.html(Math.round(data[0].tempDay) + '<span class="celcius"><sup>o</sup>C</span>');
+        currConDesc.text(data[0].description);
+        currConDt.html(convertTime(data[0].dt, 'fullDate'));
+        currConMorn.html("Rano &nbsp;" + Math.round(data[0].tempMorn) + "&deg;" + "C");
+        currConNight.html("Noc &nbsp;&nbsp;" + Math.round(data[0].tempNight) + "&deg;" + "C");
+        currConClouds.html("Chmury &nbsp;&nbsp;" + data[0].clouds + " %");
+        currConWind.html("Wiatr &nbsp;&nbsp;" + Math.round(data[0].wind) + " m/s");
+        currConPressure.html("Ciśnienie &nbsp;&nbsp;" + Math.round(data[0].pressure) + " hPa");
+        currConHum.html("Wilgotność &nbsp;&nbsp;" + data[0].humidity + " %");
+        currConIcon.css("background-image", data[0].imageUrl);
 
 
-        //section forecast
+
+        //forecast section
 
         for (var i = 0; i < data.length; i++) {
             $(".icon" + (i + 1)).css("background-image", data[i].imageUrl);
         }
 
-        //forecast box data
+        //forecast box data - insert data
 
         $('.box__day--1').text('dzisiaj');
         $('.box__day--2').text('jutro');
@@ -144,19 +155,35 @@ $(function() {
 
         //section tomorrow - mobile
 
-        $('.tempDay2').html(Math.round(data[1].tempDay) + '<span class="celcius"><sup>o</sup>C</span>');
-        $('.con-description2').text(data[1].description);
-        $("#aa").css("background-image", data[1].imageUrl);
+        //insert data
+
+        var tommTempDay = $('.tempDay2');
+        var tommConDesc = $('.con-description2');
+        var tommIcon = $("#currIcon2");
+
+        tommTempDay.html(Math.round(data[1].tempDay) + '<span class="celcius"><sup>o</sup>C</span>');
+        tommConDesc.text(data[1].description);
+        tommIcon.css("background-image", data[1].imageUrl);
+
 
         //section tomorrow conditions - mobile
 
-        $(".con-morn2").html("Rano &nbsp;" + Math.round(data[1].tempMorn) + "&deg;" + "C");
-        $(".con-night2").html("Noc &nbsp;&nbsp;" + Math.round(data[1].tempNight) + "&deg;" + "C");
-        $(".con-clouds2").html("Chmury &nbsp;&nbsp;" + data[1].clouds + " %");
-        $(".con-wind2").html("Wiatr &nbsp;&nbsp;" + Math.round(data[1].wind) + " m/s");
-        $(".con-pressure2").html("Ciśnienie &nbsp;&nbsp;" + Math.round(data[1].pressure) + " hPa");
-        $(".con-humidity2").html("Wilgotność &nbsp;&nbsp;" + data[1].humidity + " %");
-        $(".current-icon2").css("background-image", data[1].imageUrl);
+        //insert data
+        var tommConMorn = $(".con-morn2")
+        var tommConNight = $(".con-night2")
+        var tommConClouds = $(".con-clouds2")
+        var tommConWind = $(".con-wind2")
+        var tommConPressure = $(".con-pressure2")
+        var tommConHum = $(".con-humidity2")
+        var tommConIcon = $(".current-icon2")
+
+        tommConMorn.html("Rano &nbsp;" + Math.round(data[1].tempMorn) + "&deg;" + "C");
+        tommConNight.html("Noc &nbsp;&nbsp;" + Math.round(data[1].tempNight) + "&deg;" + "C");
+        tommConClouds.html("Chmury &nbsp;&nbsp;" + data[1].clouds + " %");
+        tommConWind.html("Wiatr &nbsp;&nbsp;" + Math.round(data[1].wind) + " m/s");
+        tommConPressure.html("Ciśnienie &nbsp;&nbsp;" + Math.round(data[1].pressure) + " hPa");
+        tommConHum.html("Wilgotność &nbsp;&nbsp;" + data[1].humidity + " %");
+        tommConIcon.css("background-image", data[1].imageUrl);
 
 
         //section 6 days mobile
@@ -176,10 +203,10 @@ $(function() {
         deskop.addListener(function(deskop) {
             if (deskop.matches) {
                 button.classList.remove('active');
-                $('.conditions-deskop').css("display", "block");
+                conditionsDeskop.css("display", "block");
 
             } else {
-                $('.conditions-deskop').css("display", "none");
+                conditionsDeskop.css("display", "none");
             }
         });
 
@@ -354,6 +381,10 @@ $(function() {
 
     //mobile tabs menu
     var tabs = $('.tab');
+    var tabSections = $('.section-tab');
+    var sectionCurrent = $('.section-current');
+    var sectionTommorow = $('.section-tomorrow');
+    var sectionSixDays = $('.section-6days');
 
 
     tabs.on('click', function(e) {
@@ -361,23 +392,21 @@ $(function() {
         $(this).addClass('active');
 
         if ($(this).hasClass('tabbed-section__selector-tab-1')) {
-            $('.section-current').fadeIn();
-            $('.section-tomorrow').hide();
-            $('.section-6days').hide();
+            sectionCurrent.fadeIn();
+            sectionTommorow.hide();
+            sectionSixDays.hide();
         } else if ($(this).hasClass('tabbed-section__selector-tab-2')) {
-            $('.section-current').hide();
-            $('.section-tomorrow').fadeIn();
-            $('.section-6days').hide();
+            sectionCurrent.hide();
+            sectionTommorow.fadeIn();
+            sectionSixDays.hide();
         } else if ($(this).hasClass('tabbed-section__selector-tab-3')) {
 
-            $('.section-6days').fadeIn();
-            $('.section-current').hide();
-            $('.section-tomorrow').hide();
+            sectionSixDays.fadeIn();
+            sectionCurrent.hide();
+            sectionTommorow.hide();
         }
     });
 
-
-    var tabSections = $('.section-tab');
 
 
     //swipe on mobile
@@ -389,7 +418,7 @@ $(function() {
 
             //section
             $(this).hide();
-            $('.section-current').fadeIn();
+            sectionCurrent.fadeIn();
 
             //tabs
             $('.tabbed-section__selector-tab-1').addClass('active');
@@ -399,7 +428,7 @@ $(function() {
 
             //section
             $(this).hide();
-            $('.section-tomorrow').fadeIn();
+            sectionTommorow.fadeIn();
 
             //tabs
             $('.tabbed-section__selector-tab-2').addClass('active');
@@ -417,7 +446,7 @@ $(function() {
 
             //section
             $(this).hide();
-            $('.section-tomorrow').fadeIn();
+            sectionTommorow.fadeIn();
 
             //tabs
             $('.tabbed-section__selector-tab-2').addClass('active');
@@ -428,7 +457,7 @@ $(function() {
 
             //section
             $(this).hide();
-            $('.section-6days').fadeIn();
+            $sectionSixDays.fadeIn();
 
             //tabs
             $('.tabbed-section__selector-tab-3').addClass('active');
